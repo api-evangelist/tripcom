@@ -1,0 +1,389 @@
+openapi: 3.0.0
+info:
+  title: Trip.com Plugin- Personal Travel Assistant. SearchAttractionAndActivity SearchHotel API
+  description: Provide users with personalized itinerary planning and travel products including hotels, flights, trains, attractions & tours, etc.
+  version: 1.0.0
+servers:
+- url: https://www.trip.com/ai-resource
+tags:
+- name: SearchHotel
+paths:
+  /searchHotel:
+    post:
+      summary: Get the hotel info that matches user's request
+      operationId: search_hotel
+      description: Get the hotel info of price, hotel name, room type, city, checkin date, checkout date, etc.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HotelQueryRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HotelQueryResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - SearchHotel
+components:
+  schemas:
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: string
+    Hotel:
+      title: Hotel
+      type: object
+      properties:
+        hotelName:
+          title: HotelName
+          type: string
+        hotelDescription:
+          title: HotelDescription
+          type: string
+        hotelCurrency:
+          title: HotelCurrency
+          type: string
+        hotelPrice:
+          title: HotelPrice
+          type: number
+        hotelLink:
+          title: HotelLink
+          type: string
+        hotelAddress:
+          title: hotelAddress
+          type: string
+        openYear:
+          title: openYear
+          type: string
+          description: The opening year of the hotel
+        renovationYear:
+          title: renovationYear
+          type: string
+          description: The renovation year of the hotel
+        score:
+          title: score
+          type: string
+        numberOfReviews:
+          title: numberOfReviews
+          type: integer
+          description: The number of reviews for the hotel.
+        numberOfFavorites:
+          title: numberOfFavorites
+          type: string
+          description: The number of times the hotel has been added to favorites
+        star:
+          title: star
+          type: integer
+        hotelFeatureTagList:
+          title: hotelFeatureTagList
+          type: array
+          items:
+            type: string
+    HotelQueryRequest:
+      title: HotelQueryRequest
+      required:
+      - cityName
+      - locale
+      - originalInput
+      - originalInputInEnglish
+      type: object
+      properties:
+        cityName:
+          title: cityName
+          type: string
+        topHotel:
+          title: topHotel
+          type: integer
+        locale:
+          title: locale
+          type: string
+        checkIn:
+          title: checkIn
+          type: date
+          description: The format of the field should be yyyy-MM-dd
+        checkOut:
+          title: checkOut
+          type: date
+          description: The format of the field should be yyyy-MM-dd
+        starList:
+          title: starList
+          description: "Hotel star ranking.The possible values are:\n-`1`\t1-star\n-`2`\t2-star\n-`3`\t3-star\n-`4`\t4-star\n-`5`\t5-star\n"
+          type: array
+          items:
+            type: integer
+            enum:
+            - 1
+            - 2
+            - 3
+            - 4
+            - 5
+        facilityList:
+          title: facilityList
+          description: 'Hotel facilities.The possible values are:
+
+            -`656`: 停车场
+
+            -`102`: 公用区wifi
+
+            -`144`: 暖气
+
+            -`110`: 电梯
+
+            -`97`:  行李寄存
+
+            -`384`: 花园
+
+            -`147`: 餐厅
+
+            -`142`: 吸烟区
+
+            -`15`:  洗衣服务
+
+            -`61`:  室外泳池
+
+            -`16`:  送餐服务
+
+            -`5`:   酒吧
+
+            -`177`: 公共区域监控
+
+            -`336`: 每日打扫
+
+            -`6`:   会议厅
+
+            -`42`:  健身室
+
+            -`153`: 钓鱼
+
+            -`19`:  无障碍客房
+
+            -`105`: 接机服务
+
+            -`133`: 班车服务
+
+            -`129`: 传真/复印
+
+            -`127`: 礼宾服务
+
+            -`344`: 急救包
+
+            -`98`:  叫醒服务
+
+            -`128`: 干洗服务
+
+            -`350`: 门禁系统
+
+            -`123`: 租车服务
+
+            -`68`:  儿童乐园
+
+            -`374`: 海滩
+
+            -`362`: 洗衣房
+
+            -`31`:  网球场
+
+            -`173`: 无烟楼层
+
+            -`33`:  高尔夫球场
+
+            -`44`:  桑拿浴室
+
+            -`3`:   咖啡厅
+
+            -`154`: 游戏室
+
+            -`65`:  Spa
+
+            -`359`: 共用厨房
+
+            -`548`: 所有交易支持无现金
+
+            -`122`: 儿童托管
+
+            -`11`:  外币兑换服务
+
+            -`149`: 代客泊车
+
+            -`158`: 滑雪
+
+            -`263`: 接站服务
+
+            -`24`:  棋牌室
+
+            -`69`:  快递服务
+
+            -`40`:  医务室
+
+            -`383`: 野餐区
+
+            -`349`: 投影设备
+
+            -`135`: 翻译服务
+
+            -`681`: 充电车位
+
+            -`22`:  KTV
+
+            -`137`: 婚宴服务
+
+            -`375`: 水上乐园
+
+            -`30`:  保龄球场
+
+            -`351`: 新风系统
+
+            -`579`: 售货亭/便利店
+
+            -`578`: 小吃吧
+
+            -`2`:   西餐厅
+
+            -`63`:  茶室
+
+            -`432`: 景观泳池
+
+            -`377`: 沙滩/泳池遮阳伞
+
+            -`538`: 电子身份证入住
+
+            -`64`:  足浴
+
+            '
+          type: array
+          items:
+            type: integer
+            enum:
+            - 656
+            - 102
+            - 144
+            - 110
+            - 97
+            - 384
+            - 147
+            - 142
+            - 15
+            - 61
+            - 16
+            - 5
+            - 177
+            - 336
+            - 6
+            - 42
+            - 153
+            - 19
+            - 105
+            - 133
+            - 129
+            - 127
+            - 344
+            - 98
+            - 128
+            - 350
+            - 123
+            - 68
+            - 374
+            - 362
+            - 31
+            - 173
+            - 33
+            - 44
+            - 3
+            - 154
+            - 65
+            - 359
+            - 548
+            - 122
+            - 11
+            - 149
+            - 158
+            - 263
+            - 24
+            - 69
+            - 40
+            - 383
+            - 349
+            - 135
+            - 681
+            - 22
+            - 137
+            - 375
+            - 30
+            - 351
+            - 579
+            - 578
+            - 2
+            - 63
+            - 432
+            - 377
+            - 538
+            - 64
+        themeList:
+          title: themeList
+          description: "Hotel theme.The possible values are:\n-`330`\t近地铁\n-`17`\t宠物友好\n-`754`\t海滩沿岸\n-`643`\t窗外好景\n-`1172` 新开业\n-`609`\t潜水体验\n-`770`\t水岸风光\n-`646`\t温泉泡汤\n-`1150` 亲子酒店\n-`190`\t商务出行\n-`771`\t电竞酒店\n-`102`\t网红泳池\n-`696`\t动人夜景\n-`1187` 浪漫之旅\n-`619`\t网红酒店\n-`1151` 露营\n"
+          type: array
+          items:
+            type: inetger
+            enum:
+            - 330
+            - 17
+            - 754
+            - 643
+            - 1172
+            - 609
+            - 770
+            - 646
+            - 1150
+            - 190
+            - 771
+            - 102
+            - 696
+            - 1187
+            - 619
+            - 1151
+        typeList:
+          title: typeList
+          description: "Hotel type.The possible values are:\n-`493`\t民宿\n-`940`\t度假别墅\n-`494`\t特色型住宿 \n-`486`\t酒店/度假村\n-`487`\t酒店式公寓\n-`491`\t青年旅舍\n-`489`\t民宿\n"
+          type: array
+          items:
+            type: integer
+            enum:
+            - 493
+            - 940
+            - 494
+            - 486
+            - 487
+            - 491
+            - 489
+        originalInput:
+          title: originalInput
+          type: string
+          description: The user's original input
+        originalInputInEnglish:
+          title: originalInputInEnglish
+          type: string
+          description: The user's original input, translate to english.
+    HotelQueryResponse:
+      title: HotelQueryResponse
+      required:
+      - hotelList
+      type: object
+      properties:
+        hotelList:
+          title: HotelList
+          type: array
+          items:
+            $ref: '#/components/schemas/Hotel'

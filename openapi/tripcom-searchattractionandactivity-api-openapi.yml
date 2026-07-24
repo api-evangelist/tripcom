@@ -1,0 +1,176 @@
+openapi: 3.0.0
+info:
+  title: Trip.com Plugin- Personal Travel Assistant. SearchAttractionAndActivity API
+  description: Provide users with personalized itinerary planning and travel products including hotels, flights, trains, attractions & tours, etc.
+  version: 1.0.0
+servers:
+- url: https://www.trip.com/ai-resource
+tags:
+- name: SearchAttractionAndActivity
+paths:
+  /searchAttractionAndActivity:
+    post:
+      summary: Get the list of attraction tickets, tours, experiences, travel services, activities and communication equippments, etc
+      operationId: search_attraction_ticket_and_activity
+      description: Get the attraction Title, summary, opentime, startingPrice, attributes, distanceFromDownton, reviewRating, attracationsInside, etc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AttractionAndActivityQueryRequest'
+        required: true
+      responses:
+        '200':
+          description: A list of attraction tickets and activities that match the query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AttractionAndActivityQueryResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - SearchAttractionAndActivity
+components:
+  schemas:
+    AttractionAndActivityQueryResponse:
+      title: AttractionAndActivityQueryResponse
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AttractionAndActivity'
+    AttractionAndActivityQueryRequest:
+      title: AttractionAndActivityQueryRequest
+      required:
+      - locale
+      - originalInput
+      - originalInputInEnglish
+      type: object
+      properties:
+        locale:
+          type: string
+          description: Locale
+        destination:
+          type: string
+          description: Only country, city, or province
+        pointOfInterest:
+          type: string
+          description: Only get the name of the attraction or scenic area. Forbid to get the name of country, city or province!
+          default: null
+        beginDate:
+          type: string
+          format: date
+          description: Start date. The format of the field should be yyyy-MM-dd
+        endDate:
+          type: string
+          format: date
+          description: End date. The format of the field should be yyyy-MM-dd
+        categories:
+          type: array
+          items:
+            type: string
+            enum:
+            - All
+            - Attractions
+            - TravelServices
+            - Experiences
+            - Tours
+            - WiFi&PhoneCards
+          description: 'Categories to filter the information, only including:
+
+            - "All": For querying one specific destination, like country, city or province.
+
+            - "Attractions": For querying attractions and its ticket information.
+
+            - "TravelServices": For querying travel service information.
+
+            - "Experiences": For querying unique experience information.
+
+            - "Tours": For querying guided tour, 1-day trip information.
+
+            - "WiFi&PhoneCards": For querying communication equipment, including WiFi and phone card information.
+
+            '
+        sort:
+          type: string
+          enum:
+          - Recommended
+          - TravelerRating
+          - SalesVolume
+          default: Recommended
+          description: Sort order
+        limit:
+          type: integer
+          description: Limit number of results
+        originalInput:
+          title: Original Input
+          type: string
+          description: User's original input
+        originalInputInEnglish:
+          title: Original Input (English)
+          type: string
+          description: English translation of user's original input
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: string
+    AttractionAndActivity:
+      type: object
+      properties:
+        title:
+          type: string
+          description: Title or Name
+        summary:
+          type: string
+          description: Abstract or introduction
+        url:
+          type: string
+          description: Product URL
+        categories:
+          type: array
+          items:
+            type: string
+          description: Categories
+        attributes:
+          type: array
+          items:
+            type: string
+          description: Attributes
+        attractionsInside:
+          type: array
+          description: some inside attractions
+          items:
+            type: object
+            properties:
+              title:
+                type: string
+              summary:
+                type: string
+              url:
+                type: product link
+        openTime:
+          type: string
+          description: Opening time
+        distanceFromDowntown:
+          type: string
+          description: Distance from downtown
+        reviewQuantity:
+          type: integer
+          description: Review quantity
+        reviewRating:
+          type: number
+          description: Average review rating
+        startingPrice:
+          type: number
+          description: Starting price
+        currency:
+          type: string
+          description: Currency code

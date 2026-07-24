@@ -1,0 +1,126 @@
+openapi: 3.0.0
+info:
+  title: Trip.com Plugin- Personal Travel Assistant. SearchAttractionAndActivity SearchCars API
+  description: Provide users with personalized itinerary planning and travel products including hotels, flights, trains, attractions & tours, etc.
+  version: 1.0.0
+servers:
+- url: https://www.trip.com/ai-resource
+tags:
+- name: SearchCars
+paths:
+  /searchCars:
+    post:
+      summary: Get the car info that matches user’s request
+      operationId: search_cars
+      description: This endpoint can be used when a user wants to hire cars, for example, hire cars in London.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CarRentalRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CarRentalResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - SearchCars
+components:
+  schemas:
+    CarRentalResponse:
+      title: CarRentalResponse
+      required:
+      - carList
+      type: object
+      properties:
+        carRentalLink:
+          title: carRentalLink
+          type: string
+        carList:
+          title: carList
+          type: array
+          items:
+            $ref: '#/components/schemas/Car'
+    CarRentalRequest:
+      title: FlightQueryRequest
+      required:
+      - originCountryCode
+      - locale
+      - destinationCityName
+      - originalInput
+      - originalInputInEnglish
+      type: object
+      properties:
+        originCountryCode:
+          title: originCountryCode
+          type: string
+          description: Which country the user comes from. If the user doesn't specify which country they are from in the question, please ask them.
+        locale:
+          title: locale
+          type: string
+        destinationCityName:
+          title: destinationCityName
+          type: string
+          description: The format of the field should be yyyy-MM-dd
+        originalInput:
+          title: originalInput
+          type: string
+          description: The user's original input
+        originalInputInEnglish:
+          title: originalInputInEnglish
+          type: string
+          description: The user's original input, translate to english.
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: string
+    Car:
+      title: Car
+      type: object
+      properties:
+        productName:
+          title: productName
+          type: string
+        productImage:
+          title: productImage
+          type: string
+        groupName:
+          title: groupName
+          type: string
+        transmissionType:
+          title: transmissionType
+          type: integer
+          description: "Car transmissionType:\n-`1`\tAutomatic\n-`2`\tManual\n"
+          enum:
+          - 1
+          - 2
+        seatCount:
+          title: numberOfSeat
+          type: integer
+        doorCount:
+          title: numberOfSeat
+          type: integer
+        luggageCount:
+          title: numberOfSeat
+          type: integer
+        bookingLink:
+          title: bookingLink
+          type: string
+        price:
+          title: price
+          type: string
+        airportCode:
+          title: airportCode
+          type: string

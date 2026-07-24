@@ -1,0 +1,185 @@
+openapi: 3.0.0
+info:
+  title: Trip.com Plugin- Personal Travel Assistant. SearchAttractionAndActivity SearchFlightTicket API
+  description: Provide users with personalized itinerary planning and travel products including hotels, flights, trains, attractions & tours, etc.
+  version: 1.0.0
+servers:
+- url: https://www.trip.com/ai-resource
+tags:
+- name: SearchFlightTicket
+paths:
+  /searchFlightTicket:
+    post:
+      summary: Get the flight info that matches user's request
+      operationId: search_flight_ticket
+      description: Get the flight info of price, origin, destination, travel date, take off time, arrival time, airline, flightway, seat grade, flight no., passenger type, transfer type, etc.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FlightQueryRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlightQueryResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - SearchFlightTicket
+components:
+  schemas:
+    Flight:
+      title: Flight
+      type: object
+      properties:
+        flightTicketLink:
+          title: flightTicketLink
+          type: string
+        oneWayOrRoundTrip:
+          title: oneWayOrRoundTrip
+          type: string
+          enum:
+          - OW
+          - RT
+          default: OW
+        numberOfStops:
+          title: numberOfStops
+          type: integer
+        flightDuration:
+          title: flightDuration
+          type: string
+        pricePerTicket:
+          title: pricePerTicket
+          type: string
+        currency:
+          title: currency
+          type: string
+        departureTime:
+          title: departureTime
+          type: string
+        arrivalTime:
+          title: arrivalTime
+          type: string
+        airline:
+          title: airline
+          type: string
+        departureAirport:
+          title: departureAirport
+          type: string
+        arrivalAirport:
+          title: arrivalAirport
+          type: string
+        flightNumber:
+          title: flightNumber
+          type: string
+        returnDepartureTime:
+          title: returnDepartureTime
+          type: string
+        returnArrivalTime:
+          title: returnArrivalTime
+          type: string
+        returnAirline:
+          title: returnAirline
+          type: string
+        returnDepartureAirport:
+          title: returnDepartureAirport
+          type: string
+        returnArrivalAirport:
+          title: returnArrivalAirport
+          type: string
+        returnFlightNumber:
+          title: returnFlightNumber
+          type: string
+        returnNumberOfStops:
+          title: returnNumberOfStops
+          type: integer
+        returnFlightDuration:
+          title: returnFlightDuration
+          type: string
+    FlightQueryRequest:
+      title: FlightQueryRequest
+      required:
+      - destinationCityCode
+      - locale
+      - originalInput
+      - originalInputInEnglish
+      type: object
+      properties:
+        originCityCode:
+          title: originCityCode
+          type: string
+        destinationCityCode:
+          title: destinationCityCode
+          type: string
+        departureDate:
+          title: departureDate
+          type: string
+          description: The format of the field should be yyyy-MM-dd
+        returnDate:
+          title: returnDate
+          type: string
+          description: The format of the field should be yyyy-MM-dd
+        locale:
+          title: locale
+          type: string
+        oneWayOrRoundTrip:
+          title: oneWayOrRoundTrip
+          type: string
+          enum:
+          - OW
+          - RT
+        originalInput:
+          title: originalInput
+          type: string
+          description: The user's original input
+        originalInputInEnglish:
+          title: originalInputInEnglish
+          type: string
+          description: The user's original input, translate to english.
+    FlightQueryResponse:
+      title: FlightQueryResponse
+      required:
+      - bookFlightLink
+      type: object
+      properties:
+        originCityCode:
+          title: originCityCode
+          type: string
+        destinationCityCode:
+          title: destinationCityCode
+          type: string
+        oneWayOrRoundTrip:
+          title: oneWayOrRoundTrip
+          type: string
+          enum:
+          - OW
+          - RT
+        departureDate:
+          title: departureDate
+          type: string
+        returnDate:
+          title: returnDate
+          type: string
+        bookFlightLink:
+          title: bookFlightLink
+          type: string
+        recommendedListOfOtherFlights:
+          title: recommendedListOfOtherFlights
+          type: array
+          items:
+            $ref: '#/components/schemas/Flight'
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: string
