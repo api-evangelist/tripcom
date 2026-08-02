@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/tripcom-plugin-openapi-original.yml
+standards:
+- id: openapi-3.0
+  conforms: true
+  evidence: openapi 3.0.0 document published at https://www.trip.com/ai-resource/trip/openapi.yaml
+- id: openai-plugin
+  conforms: true
+  evidence: /.well-known/ai-plugin.json manifest (schema_version v1) references the OpenAPI spec
+- id: oauth2
+  conforms: false
+  evidence: no securitySchemes; ai-plugin auth type is "none"
+- id: oidc
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: 422 responses use a custom HTTPValidationError schema, not application/problem+json
+- id: json-api
+  conforms: false
+- id: pagination
+  conforms: false
+  evidence: search responses return bounded lists with no cursor/offset pagination fields
+- id: idempotency
+  conforms: false
+  evidence: no idempotency-key header/parameter documented

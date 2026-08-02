@@ -1,0 +1,24 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: openapi/tripcom-plugin-openapi-original.yml
+note: >-
+  No official hosted MCP server found for Trip.com. Trip.com does publish a
+  public OpenAI-plugin OpenAPI (auth none); this is a candidate MCP tool surface
+  derived one-tool-per-operation from that spec.
+server:
+  name: tripcom
+  transport: http
+tools:
+- name: search_flight_ticket
+  description: Search flight info (price, origin, destination, dates, times, airline, seat grade, transfer type) matching the user's request.
+  source_operation: openapi/tripcom-plugin-openapi-original.yml#search_flight_ticket
+- name: search_hotel
+  description: Search hotel info (price, name, room type, city, check-in/out, star, facilities, themes) matching the user's request.
+  source_operation: openapi/tripcom-plugin-openapi-original.yml#search_hotel
+- name: search_cars
+  description: Search rental car offers (product, group, transmission, seats, price, booking link) for a destination city.
+  source_operation: openapi/tripcom-plugin-openapi-original.yml#search_cars
+- name: search_attraction_ticket_and_activity
+  description: Search attraction tickets, tours, experiences, travel services, and activities for a destination.
+  source_operation: openapi/tripcom-plugin-openapi-original.yml#search_attraction_ticket_and_activity

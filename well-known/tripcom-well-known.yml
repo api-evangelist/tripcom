@@ -1,0 +1,21 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.trip.com/.well-known/
+host: https://www.trip.com
+documents:
+- path: /.well-known/ai-plugin.json
+  status: 200
+  file: tripcom-ai-plugin.json
+  note: OpenAI-plugin manifest; references OpenAPI at https://www.trip.com/ai-resource/trip/openapi.yaml (auth type none)
+- path: /.well-known/security.txt
+  status: 200
+  note: returns 200 but redirects to the site homepage (soft 404) — no real security.txt published
+- path: /.well-known/openid-configuration
+  status: 200
+  note: soft 404 (redirects to homepage) — no OIDC discovery document
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  note: soft 404 (redirects to homepage) — no RFC 8414 metadata
+- path: /.well-known/api-catalog
+  status: 200
+  note: soft 404 (redirects to homepage) — no RFC 9727 api-catalog

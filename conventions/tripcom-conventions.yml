@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/tripcom-plugin-openapi-original.yml
+authentication:
+  style: none
+  detail: Public plugin API; ai-plugin.json declares auth type "none". No API key, OAuth, or token required.
+  ref: authentication/ (no securitySchemes present)
+idempotency:
+  supported: false
+  detail: No idempotency-key header or parameter documented. Operations are read-only search queries (POST with JSON body) with no side effects.
+pagination:
+  supported: false
+  detail: >-
+    Responses return bounded result lists. searchAttractionAndActivity accepts a
+    `limit` integer and a `sort` enum (Recommended | TravelerRating |
+    SalesVolume); searchHotel accepts `topHotel`. There are no cursor/offset
+    tokens or next-page links.
+request_shape:
+  transport: HTTPS POST, application/json
+  common_fields:
+  - originalInput
+  - originalInputInEnglish
+  - locale
+  note: Every request carries the user's original natural-language input (raw and English-translated) plus a locale.
+response_shape:
+  detail: Each response returns product lists plus Trip.com deep booking links (bookFlightLink, hotelLink, bookingLink, carRentalLink, url).
+error_envelope:
+  detail: "422 Validation Error with a custom HTTPValidationError object ({ detail: string })."
+  ref: errors/tripcom-problem-types.yml
+versioning:
+  ref: lifecycle/tripcom-lifecycle.yml
+rate_limiting:
+  detail: No rate-limit signaling documented in the spec.

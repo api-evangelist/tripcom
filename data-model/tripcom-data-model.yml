@@ -1,0 +1,54 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/tripcom-plugin-openapi-original.yml
+note: >-
+  Entity-relationship graph derived from OpenAPI components.schemas $ref links.
+  Response envelopes wrap arrays of domain entities returned by each search
+  operation. No id-prefix scheme is published (results carry deep booking-link
+  URLs rather than resource ids).
+entities:
+- name: Flight
+  domain: flights
+- name: Hotel
+  domain: hotels
+- name: Itinerary
+  domain: itinerary
+- name: TouristAttraction
+  domain: itinerary
+- name: Car
+  domain: car-rental
+- name: AttractionAndActivity
+  domain: attractions-activities
+relationships:
+- from: FlightQueryResponse
+  to: Flight
+  kind: has_many
+  via: recommendedListOfOtherFlights
+- from: HotelQueryResponse
+  to: Hotel
+  kind: has_many
+  via: hotelList
+- from: ItineraryQueryResponse
+  to: Itinerary
+  kind: has_many
+  via: itineraryList
+- from: Itinerary
+  to: TouristAttraction
+  kind: has_many
+  via: touristAttractions
+- from: Itinerary
+  to: Hotel
+  kind: has_one
+  via: hotel
+- from: CarRentalResponse
+  to: Car
+  kind: has_many
+  via: carList
+- from: AttractionAndActivityQueryResponse
+  to: AttractionAndActivity
+  kind: has_many
+  via: results
+- from: AttractionAndActivity
+  to: AttractionAndActivity
+  kind: has_many
+  via: attractionsInside

@@ -1,7 +1,14 @@
 aid: tripcom
 name: Trip.com
-description: Trip.com is a company surfaced as a portfolio company of battery-ventures and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Trip.com is a leading global online travel agency and part of Trip.com Group,
+  offering one-stop travel booking for flights, hotels, trains, car rentals,
+  airport transfers, attraction tickets, tours, and vacation packages across 39
+  countries and regions in 24 languages. Trip.com publishes a public AI
+  travel-assistant plugin API (an OpenAI-plugin-style OpenAPI at
+  www.trip.com/ai-resource) that lets assistants search flights, hotels, car
+  hire, and attractions/activities and return deep booking links, alongside a
+  published llms.txt describing its site structure for AI agents.
 url: https://raw.githubusercontent.com/api-evangelist/tripcom/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,14 +16,126 @@ x-backed-by:
 - battery-ventures
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 14
+  pass: local-v1
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://ak-d.tripcdn.com/images/1o14712000bc9tm39E62A.jpg
 tags:
 - Company
-apis: []
+- Travel
+- Hotels
+- Flights
+- Car Rental
+- Attractions
+- Trains
+- Booking
+- Itinerary
+- AI Plugin
+apis:
+- aid: tripcom:tripcom-searchattractionandactivity-api
+  name: Trip.com SearchAttractionAndActivity API
+  description: >-
+    The SearchAttractionAndActivity API from Trip.com — 1 operation(s) for searchattractionandactivity.
+  humanURL: https://www.trip.com/
+  baseURL: https://www.trip.com/ai-resource
+  tags:
+  - SearchAttractionAndActivity
+  properties:
+  - type: OpenAPI
+    url: openapi/tripcom-searchattractionandactivity-api-openapi.yml
+  - type: ErrorCatalog
+    url: errors/tripcom-problem-types.yml
+  - type: DataModel
+    url: data-model/tripcom-data-model.yml
+- aid: tripcom:tripcom-searchcars-api
+  name: Trip.com SearchCars API
+  description: The SearchCars API from Trip.com — 1 operation(s) for searchcars.
+  humanURL: https://www.trip.com/
+  baseURL: https://www.trip.com/ai-resource
+  tags:
+  - SearchCars
+  properties:
+  - type: OpenAPI
+    url: openapi/tripcom-searchcars-api-openapi.yml
+  - type: ErrorCatalog
+    url: errors/tripcom-problem-types.yml
+  - type: DataModel
+    url: data-model/tripcom-data-model.yml
+- aid: tripcom:tripcom-searchflightticket-api
+  name: Trip.com SearchFlightTicket API
+  description: The SearchFlightTicket API from Trip.com — 1 operation(s) for searchflightticket.
+  humanURL: https://www.trip.com/
+  baseURL: https://www.trip.com/ai-resource
+  tags:
+  - SearchFlightTicket
+  properties:
+  - type: OpenAPI
+    url: openapi/tripcom-searchflightticket-api-openapi.yml
+  - type: ErrorCatalog
+    url: errors/tripcom-problem-types.yml
+  - type: DataModel
+    url: data-model/tripcom-data-model.yml
+- aid: tripcom:tripcom-searchhotel-api
+  name: Trip.com SearchHotel API
+  description: The SearchHotel API from Trip.com — 1 operation(s) for searchhotel.
+  humanURL: https://www.trip.com/
+  baseURL: https://www.trip.com/ai-resource
+  tags:
+  - SearchHotel
+  properties:
+  - type: OpenAPI
+    url: openapi/tripcom-searchhotel-api-openapi.yml
+  - type: ErrorCatalog
+    url: errors/tripcom-problem-types.yml
+  - type: DataModel
+    url: data-model/tripcom-data-model.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: DomainSecurity
+  url: security/tripcom-domain-security.yml
+- type: AgenticAccess
+  url: agentic-access/tripcom-agentic-access.yml
+- type: LLMsTxt
+  url: llms/tripcom-llms.txt
+- type: WellKnown
+  url: well-known/tripcom-well-known.yml
+- type: MCPServer
+  url: mcp/tripcom-mcp.yml
+- type: Conformance
+  url: conformance/tripcom-conformance.yml
+- type: Lifecycle
+  url: lifecycle/tripcom-lifecycle.yml
+- type: Conventions
+  url: conventions/tripcom-conventions.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DeveloperPortal
+  url: https://developer.trip.com
+- type: Blog
+  url: https://www.trip.com/blog/
+- type: Support
+  url: https://www.trip.com/ask/questions/trip.com-customer-service.html
+- type: TermsOfService
+  url: https://pages.trip.com/service-guideline/terms-en-xx.html
+- type: PrivacyPolicy
+  url: https://pages.trip.com/service-guideline/privacy-policy-en-xx.html

@@ -1,0 +1,28 @@
+generated: '2026-07-21'
+method: generated
+source: openapi/tripcom-plugin-openapi-original.yml
+note: >-
+  Packaged Agent Skills generated from Trip.com's public AI travel-assistant
+  plugin OpenAPI. Every step is grounded in a real operationId verified in the
+  spec. The API requires no authentication.
+skills:
+- file: tripcom-search-flights.md
+  name: Search flights on Trip.com
+  api: openapi/tripcom-plugin-openapi-original.yml
+  operations: [search_flight_ticket]
+- file: tripcom-search-hotels.md
+  name: Search hotels on Trip.com
+  api: openapi/tripcom-plugin-openapi-original.yml
+  operations: [search_hotel]
+- file: tripcom-search-cars.md
+  name: Search rental cars on Trip.com
+  api: openapi/tripcom-plugin-openapi-original.yml
+  operations: [search_cars]
+- file: tripcom-search-attractions.md
+  name: Search attractions and activities on Trip.com
+  api: openapi/tripcom-plugin-openapi-original.yml
+  operations: [search_attraction_ticket_and_activity]
+- file: tripcom-plan-trip.md
+  name: Plan a trip (flights + hotels + things to do)
+  api: openapi/tripcom-plugin-openapi-original.yml
+  operations: [search_flight_ticket, search_hotel, search_attraction_ticket_and_activity]

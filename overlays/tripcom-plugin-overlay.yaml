@@ -1,0 +1,30 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Trip.com AI Travel Assistant Plugin API
+  version: 1.0.0
+extends: openapi/tripcom-plugin-openapi-original.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: tripcom
+    x-apievangelist-source: https://www.trip.com/.well-known/ai-plugin.json
+    x-apievangelist-auth: none
+    x-apievangelist-notes: >-
+      Public OpenAI-plugin-style search API. All operations are POST search
+      queries that return Trip.com deep booking links; no write/booking
+      operations are exposed and no authentication is required.
+- target: $.info
+  update:
+    x-agentic-access: agentic-access/tripcom-agentic-access.yml
+- target: $.paths['/searchFlightTicket'].post
+  update:
+    x-apievangelist-domain: flights
+- target: $.paths['/searchHotel'].post
+  update:
+    x-apievangelist-domain: hotels
+- target: $.paths['/searchCars'].post
+  update:
+    x-apievangelist-domain: car-rental
+- target: $.paths['/searchAttractionAndActivity'].post
+  update:
+    x-apievangelist-domain: attractions-activities

@@ -1,0 +1,17 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/tripcom-plugin-openapi-original.yml
+versioning:
+  scheme: spec-version
+  current: '1.0.0'
+  note: info.version 1.0.0; the plugin OpenAPI is unversioned in its URL path (/ai-resource)
+deprecation:
+  policy_url: null
+  sunset_header: false
+sla:
+  url: null
+status_page: null
+deprecated_operations: []
+note: >-
+  No public deprecation policy, SLA, or status page was found for the Trip.com
+  AI plugin API. No operations are marked deprecated in the spec.

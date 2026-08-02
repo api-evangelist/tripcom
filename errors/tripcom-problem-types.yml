@@ -1,0 +1,24 @@
+generated: '2026-07-21'
+method: derived
+format: custom
+source: openapi/tripcom-plugin-openapi-original.yml
+note: >-
+  Derived from OpenAPI responses. The spec only declares a 422 Validation Error
+  across all four operations, using a custom HTTPValidationError schema
+  (object with a string `detail` field) rather than RFC 9457
+  application/problem+json.
+envelope:
+  schema: HTTPValidationError
+  fields:
+  - name: detail
+    type: string
+    description: Human-readable validation error detail
+problems:
+- status: 422
+  title: Validation Error
+  schema: HTTPValidationError
+  source_operations:
+  - openapi/tripcom-plugin-openapi-original.yml#search_flight_ticket
+  - openapi/tripcom-plugin-openapi-original.yml#search_hotel
+  - openapi/tripcom-plugin-openapi-original.yml#search_cars
+  - openapi/tripcom-plugin-openapi-original.yml#search_attraction_ticket_and_activity
