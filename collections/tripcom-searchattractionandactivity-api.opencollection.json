@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Trip.com Plugin- Personal Travel Assistant. SearchAttractionAndActivity API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SearchAttractionAndActivity",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the list of attraction tickets, tours, experiences, travel services, activities and communication equippments, etc",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.trip.com/ai-resource/searchAttractionAndActivity",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get the attraction Title, summary, opentime, startingPrice, attributes, distanceFromDownton, reviewRating, attracationsInside, etc"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Trip.com Plugin- Personal Travel Assistant. SearchAttractionAndActivity SearchHotel API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SearchHotel",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the hotel info that matches user's request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.trip.com/ai-resource/searchHotel",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get the hotel info of price, hotel name, room type, city, checkin date, checkout date, etc."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

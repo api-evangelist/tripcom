@@ -1,0 +1,166 @@
+{
+  "item": [
+    {
+      "id": "28cfd939-85e9-4ed7-b8ff-c2d9288bddb2",
+      "name": "SearchHotel",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dee3161d-d1e4-492c-a53d-6c40c8225222",
+          "name": "Get the hotel info that matches user's request",
+          "request": {
+            "name": "Get the hotel info that matches user's request",
+            "description": {
+              "content": "Get the hotel info of price, hotel name, room type, city, checkin date, checkout date, etc.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "searchHotel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cityName\": \"<string>\",\n  \"locale\": \"<string>\",\n  \"originalInput\": \"<string>\",\n  \"originalInputInEnglish\": \"<string>\",\n  \"topHotel\": \"<integer>\",\n  \"checkIn\": \"<date>\",\n  \"checkOut\": \"<date>\",\n  \"starList\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"facilityList\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"themeList\": [\n    \"<inetger>\",\n    \"<inetger>\"\n  ],\n  \"typeList\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b9a4729b-4f07-4920-8197-5d1aa313371a",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "searchHotel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"cityName\": \"<string>\",\n  \"locale\": \"<string>\",\n  \"originalInput\": \"<string>\",\n  \"originalInputInEnglish\": \"<string>\",\n  \"topHotel\": \"<integer>\",\n  \"checkIn\": \"<date>\",\n  \"checkOut\": \"<date>\",\n  \"starList\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"facilityList\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"themeList\": [\n    \"<inetger>\",\n    \"<inetger>\"\n  ],\n  \"typeList\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"hotelList\": [\n    {\n      \"hotelName\": \"string\",\n      \"hotelDescription\": \"string\",\n      \"hotelCurrency\": \"string\",\n      \"hotelPrice\": 2599.7786652647883,\n      \"hotelLink\": \"string\",\n      \"hotelAddress\": \"string\",\n      \"openYear\": \"string\",\n      \"renovationYear\": \"string\",\n      \"score\": \"string\",\n      \"numberOfReviews\": 8041,\n      \"numberOfFavorites\": \"string\",\n      \"star\": 9322,\n      \"hotelFeatureTagList\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"hotelName\": \"string\",\n      \"hotelDescription\": \"string\",\n      \"hotelCurrency\": \"string\",\n      \"hotelPrice\": 7593.192160981694,\n      \"hotelLink\": \"string\",\n      \"hotelAddress\": \"string\",\n      \"openYear\": \"string\",\n      \"renovationYear\": \"string\",\n      \"score\": \"string\",\n      \"numberOfReviews\": 6716,\n      \"numberOfFavorites\": \"string\",\n      \"star\": 1755,\n      \"hotelFeatureTagList\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "247b808d-c887-49ed-b4a4-65505f3873e8",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "searchHotel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"cityName\": \"<string>\",\n  \"locale\": \"<string>\",\n  \"originalInput\": \"<string>\",\n  \"originalInputInEnglish\": \"<string>\",\n  \"topHotel\": \"<integer>\",\n  \"checkIn\": \"<date>\",\n  \"checkOut\": \"<date>\",\n  \"starList\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"facilityList\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"themeList\": [\n    \"<inetger>\",\n    \"<inetger>\"\n  ],\n  \"typeList\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.trip.com/ai-resource",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c7990072-57de-4cc3-8950-6b96080dda4f",
+    "name": "Trip.com Plugin- Personal Travel Assistant. SearchAttractionAndActivity SearchHotel API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Provide users with personalized itinerary planning and travel products including hotels, flights, trains, attractions & tours, etc.",
+      "type": "text/plain"
+    }
+  }
+}

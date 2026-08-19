@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Trip.com Plugin- Personal Travel Assistant. SearchAttractionAndActivity SearchCars API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SearchCars",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the car info that matches user’s request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.trip.com/ai-resource/searchCars",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint can be used when a user wants to hire cars, for example, hire cars in London."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

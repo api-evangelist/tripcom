@@ -1,0 +1,166 @@
+{
+  "item": [
+    {
+      "id": "1a64997a-1120-4d80-9e24-e16e5e5166bf",
+      "name": "SearchFlightTicket",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "307bb0b4-6b75-4053-bd2d-5c0b155b2a54",
+          "name": "Get the flight info that matches user's request",
+          "request": {
+            "name": "Get the flight info that matches user's request",
+            "description": {
+              "content": "Get the flight info of price, origin, destination, travel date, take off time, arrival time, airline, flightway, seat grade, flight no., passenger type, transfer type, etc.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "searchFlightTicket"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"destinationCityCode\": \"<string>\",\n  \"locale\": \"<string>\",\n  \"originalInput\": \"<string>\",\n  \"originalInputInEnglish\": \"<string>\",\n  \"originCityCode\": \"<string>\",\n  \"departureDate\": \"<string>\",\n  \"returnDate\": \"<string>\",\n  \"oneWayOrRoundTrip\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4d5bbf29-3d70-48ee-b68d-e75456362a9d",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "searchFlightTicket"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"destinationCityCode\": \"<string>\",\n  \"locale\": \"<string>\",\n  \"originalInput\": \"<string>\",\n  \"originalInputInEnglish\": \"<string>\",\n  \"originCityCode\": \"<string>\",\n  \"departureDate\": \"<string>\",\n  \"returnDate\": \"<string>\",\n  \"oneWayOrRoundTrip\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"bookFlightLink\": \"string\",\n  \"originCityCode\": \"string\",\n  \"destinationCityCode\": \"string\",\n  \"oneWayOrRoundTrip\": \"OW\",\n  \"departureDate\": \"string\",\n  \"returnDate\": \"string\",\n  \"recommendedListOfOtherFlights\": [\n    {\n      \"flightTicketLink\": \"string\",\n      \"oneWayOrRoundTrip\": \"OW\",\n      \"numberOfStops\": 926,\n      \"flightDuration\": \"string\",\n      \"pricePerTicket\": \"string\",\n      \"currency\": \"string\",\n      \"departureTime\": \"string\",\n      \"arrivalTime\": \"string\",\n      \"airline\": \"string\",\n      \"departureAirport\": \"string\",\n      \"arrivalAirport\": \"string\",\n      \"flightNumber\": \"string\",\n      \"returnDepartureTime\": \"string\",\n      \"returnArrivalTime\": \"string\",\n      \"returnAirline\": \"string\",\n      \"returnDepartureAirport\": \"string\",\n      \"returnArrivalAirport\": \"string\",\n      \"returnFlightNumber\": \"string\",\n      \"returnNumberOfStops\": 2260,\n      \"returnFlightDuration\": \"string\"\n    },\n    {\n      \"flightTicketLink\": \"string\",\n      \"oneWayOrRoundTrip\": \"OW\",\n      \"numberOfStops\": 3777,\n      \"flightDuration\": \"string\",\n      \"pricePerTicket\": \"string\",\n      \"currency\": \"string\",\n      \"departureTime\": \"string\",\n      \"arrivalTime\": \"string\",\n      \"airline\": \"string\",\n      \"departureAirport\": \"string\",\n      \"arrivalAirport\": \"string\",\n      \"flightNumber\": \"string\",\n      \"returnDepartureTime\": \"string\",\n      \"returnArrivalTime\": \"string\",\n      \"returnAirline\": \"string\",\n      \"returnDepartureAirport\": \"string\",\n      \"returnArrivalAirport\": \"string\",\n      \"returnFlightNumber\": \"string\",\n      \"returnNumberOfStops\": 1898,\n      \"returnFlightDuration\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "230b133c-da84-4944-bc3b-1fc9c8a2b1f1",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "searchFlightTicket"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"destinationCityCode\": \"<string>\",\n  \"locale\": \"<string>\",\n  \"originalInput\": \"<string>\",\n  \"originalInputInEnglish\": \"<string>\",\n  \"originCityCode\": \"<string>\",\n  \"departureDate\": \"<string>\",\n  \"returnDate\": \"<string>\",\n  \"oneWayOrRoundTrip\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.trip.com/ai-resource",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "df81e167-a2ad-49cc-b0c8-2ce91c1dde60",
+    "name": "Trip.com Plugin- Personal Travel Assistant. SearchAttractionAndActivity SearchFlightTicket API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Provide users with personalized itinerary planning and travel products including hotels, flights, trains, attractions & tours, etc.",
+      "type": "text/plain"
+    }
+  }
+}

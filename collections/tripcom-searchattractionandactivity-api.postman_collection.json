@@ -1,0 +1,166 @@
+{
+  "item": [
+    {
+      "id": "8c7b97bd-0d20-4264-9000-3a0cf9c6d7b8",
+      "name": "SearchAttractionAndActivity",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "403666c1-c49e-4898-8aca-e4fd7d56345c",
+          "name": "Get the list of attraction tickets, tours, experiences, travel services, activities and communication equippments, etc",
+          "request": {
+            "name": "Get the list of attraction tickets, tours, experiences, travel services, activities and communication equippments, etc",
+            "description": {
+              "content": "Get the attraction Title, summary, opentime, startingPrice, attributes, distanceFromDownton, reviewRating, attracationsInside, etc",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "searchAttractionAndActivity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"locale\": \"<string>\",\n  \"originalInput\": \"<string>\",\n  \"originalInputInEnglish\": \"<string>\",\n  \"destination\": \"<string>\",\n  \"pointOfInterest\": null,\n  \"beginDate\": \"<date>\",\n  \"endDate\": \"<date>\",\n  \"categories\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"sort\": \"Recommended\",\n  \"limit\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1cea5192-10cf-4540-9100-8fe3acc071a6",
+              "name": "A list of attraction tickets and activities that match the query",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "searchAttractionAndActivity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"locale\": \"<string>\",\n  \"originalInput\": \"<string>\",\n  \"originalInputInEnglish\": \"<string>\",\n  \"destination\": \"<string>\",\n  \"pointOfInterest\": null,\n  \"beginDate\": \"<date>\",\n  \"endDate\": \"<date>\",\n  \"categories\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"sort\": \"Recommended\",\n  \"limit\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "null",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cfa30ffb-53f0-4054-b1be-9f72169fc941",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "searchAttractionAndActivity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"locale\": \"<string>\",\n  \"originalInput\": \"<string>\",\n  \"originalInputInEnglish\": \"<string>\",\n  \"destination\": \"<string>\",\n  \"pointOfInterest\": null,\n  \"beginDate\": \"<date>\",\n  \"endDate\": \"<date>\",\n  \"categories\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"sort\": \"Recommended\",\n  \"limit\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.trip.com/ai-resource",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e218500d-b6b3-449b-b017-586da015d436",
+    "name": "Trip.com Plugin- Personal Travel Assistant. SearchAttractionAndActivity API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Provide users with personalized itinerary planning and travel products including hotels, flights, trains, attractions & tours, etc.",
+      "type": "text/plain"
+    }
+  }
+}

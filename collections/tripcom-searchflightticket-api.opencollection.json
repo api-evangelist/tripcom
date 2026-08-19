@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Trip.com Plugin- Personal Travel Assistant. SearchAttractionAndActivity SearchFlightTicket API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SearchFlightTicket",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the flight info that matches user's request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.trip.com/ai-resource/searchFlightTicket",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get the flight info of price, origin, destination, travel date, take off time, arrival time, airline, flightway, seat grade, flight no., passenger type, transfer type, etc."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
