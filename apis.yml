@@ -123,6 +123,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Website
+  url: https://www.trip.com/
 - type: Overlay
   url: overlays/tripcom-plugin-overlay.yaml
 - type: DomainSecurity
