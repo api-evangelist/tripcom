@@ -1,10 +1,7 @@
 {
   "provider": "tripcom",
   "sources": [
-    "tripcom-searchattractionandactivity-api-openapi.yml",
-    "tripcom-searchcars-api-openapi.yml",
-    "tripcom-searchflightticket-api-openapi.yml",
-    "tripcom-searchhotel-api-openapi.yml"
+    "_original/tripcom-plugin-openapi-original.yml"
   ],
   "outputs": [
     "tripcom-searchattractionandactivity-api-openapi.yml",
@@ -15,6 +12,23 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "tripcom-plugin-openapi-original.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "tripcom-plugin-openapi-original.yml: tagged paths POST /searchFlightTicket -> SearchFlightTicket",
+    "tripcom-plugin-openapi-original.yml: tagged paths POST /searchHotel -> SearchHotel",
+    "tripcom-plugin-openapi-original.yml: tagged paths POST /searchCars -> SearchCars",
+    "tripcom-plugin-openapi-original.yml: tagged paths POST /searchAttractionAndActivity -> SearchAttractionAndActivity",
+    "tripcom-plugin-openapi-original.yml: declared missing tag: SearchAttractionAndActivity",
+    "tripcom-plugin-openapi-original.yml: declared missing tag: SearchCars",
+    "tripcom-plugin-openapi-original.yml: declared missing tag: SearchFlightTicket",
+    "tripcom-plugin-openapi-original.yml: declared missing tag: SearchHotel",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "tripcom-searchattractionandactivity-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tripcom-searchcars-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tripcom-searchflightticket-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tripcom-searchhotel-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
