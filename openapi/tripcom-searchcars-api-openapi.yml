@@ -43,44 +43,6 @@ components:
         detail:
           title: Detail
           type: string
-    Car:
-      title: Car
-      type: object
-      properties:
-        productName:
-          title: productName
-          type: string
-        productImage:
-          title: productImage
-          type: string
-        groupName:
-          title: groupName
-          type: string
-        transmissionType:
-          title: transmissionType
-          type: integer
-          description: "Car transmissionType:\n-`1`\tAutomatic\n-`2`\tManual\n"
-          enum:
-          - 1
-          - 2
-        seatCount:
-          title: numberOfSeat
-          type: integer
-        doorCount:
-          title: numberOfSeat
-          type: integer
-        luggageCount:
-          title: numberOfSeat
-          type: integer
-        bookingLink:
-          title: bookingLink
-          type: string
-        price:
-          title: price
-          type: string
-        airportCode:
-          title: airportCode
-          type: string
     CarRentalResponse:
       title: CarRentalResponse
       required:
@@ -124,3 +86,41 @@ components:
           title: originalInputInEnglish
           type: string
           description: The user's original input, translate to english.
+    Car:
+      title: Car
+      type: object
+      properties:
+        productName:
+          title: productName
+          type: string
+        productImage:
+          title: productImage
+          type: string
+        groupName:
+          title: groupName
+          type: string
+        transmissionType:
+          title: transmissionType
+          type: integer
+          description: "Car transmissionType:\n-`1`\tAutomatic\n-`2`\tManual\n"
+          enum:
+          - 1
+          - 2
+        seatCount:
+          title: numberOfSeat
+          type: integer
+        doorCount:
+          title: numberOfSeat
+          type: integer
+        luggageCount:
+          title: numberOfSeat
+          type: integer
+        bookingLink:
+          title: bookingLink
+          type: string
+        price:
+          title: price
+          type: string
+        airportCode:
+          title: airportCode
+          type: string

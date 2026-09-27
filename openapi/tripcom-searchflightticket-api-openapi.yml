@@ -36,6 +36,53 @@ paths:
       - SearchFlightTicket
 components:
   schemas:
+    FlightQueryRequest:
+      title: FlightQueryRequest
+      required:
+      - destinationCityCode
+      - locale
+      - originalInput
+      - originalInputInEnglish
+      type: object
+      properties:
+        originCityCode:
+          title: originCityCode
+          type: string
+        destinationCityCode:
+          title: destinationCityCode
+          type: string
+        departureDate:
+          title: departureDate
+          type: string
+          description: The format of the field should be yyyy-MM-dd
+        returnDate:
+          title: returnDate
+          type: string
+          description: The format of the field should be yyyy-MM-dd
+        locale:
+          title: locale
+          type: string
+        oneWayOrRoundTrip:
+          title: oneWayOrRoundTrip
+          type: string
+          enum:
+          - OW
+          - RT
+        originalInput:
+          title: originalInput
+          type: string
+          description: The user's original input
+        originalInputInEnglish:
+          title: originalInputInEnglish
+          type: string
+          description: The user's original input, translate to english.
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: string
     Flight:
       title: Flight
       type: object
@@ -104,53 +151,6 @@ components:
         returnFlightDuration:
           title: returnFlightDuration
           type: string
-    HTTPValidationError:
-      title: HTTPValidationError
-      type: object
-      properties:
-        detail:
-          title: Detail
-          type: string
-    FlightQueryRequest:
-      title: FlightQueryRequest
-      required:
-      - destinationCityCode
-      - locale
-      - originalInput
-      - originalInputInEnglish
-      type: object
-      properties:
-        originCityCode:
-          title: originCityCode
-          type: string
-        destinationCityCode:
-          title: destinationCityCode
-          type: string
-        departureDate:
-          title: departureDate
-          type: string
-          description: The format of the field should be yyyy-MM-dd
-        returnDate:
-          title: returnDate
-          type: string
-          description: The format of the field should be yyyy-MM-dd
-        locale:
-          title: locale
-          type: string
-        oneWayOrRoundTrip:
-          title: oneWayOrRoundTrip
-          type: string
-          enum:
-          - OW
-          - RT
-        originalInput:
-          title: originalInput
-          type: string
-          description: The user's original input
-        originalInputInEnglish:
-          title: originalInputInEnglish
-          type: string
-          description: The user's original input, translate to english.
     FlightQueryResponse:
       title: FlightQueryResponse
       required:

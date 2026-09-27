@@ -43,6 +43,17 @@ components:
         detail:
           title: Detail
           type: string
+    HotelQueryResponse:
+      title: HotelQueryResponse
+      required:
+      - hotelList
+      type: object
+      properties:
+        hotelList:
+          title: HotelList
+          type: array
+          items:
+            $ref: '#/components/schemas/Hotel'
     Hotel:
       title: Hotel
       type: object
@@ -376,14 +387,3 @@ components:
           title: originalInputInEnglish
           type: string
           description: The user's original input, translate to english.
-    HotelQueryResponse:
-      title: HotelQueryResponse
-      required:
-      - hotelList
-      type: object
-      properties:
-        hotelList:
-          title: HotelList
-          type: array
-          items:
-            $ref: '#/components/schemas/Hotel'

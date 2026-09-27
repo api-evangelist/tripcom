@@ -43,14 +43,6 @@ components:
         detail:
           title: Detail
           type: string
-    AttractionAndActivityQueryResponse:
-      title: AttractionAndActivityQueryResponse
-      type: object
-      properties:
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/AttractionAndActivity'
     AttractionAndActivityQueryRequest:
       title: AttractionAndActivityQueryRequest
       required:
@@ -122,6 +114,14 @@ components:
           title: Original Input (English)
           type: string
           description: English translation of user's original input
+    AttractionAndActivityQueryResponse:
+      title: AttractionAndActivityQueryResponse
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AttractionAndActivity'
     AttractionAndActivity:
       type: object
       properties:
