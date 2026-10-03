@@ -36,13 +36,6 @@ paths:
       - SearchCars
 components:
   schemas:
-    HTTPValidationError:
-      title: HTTPValidationError
-      type: object
-      properties:
-        detail:
-          title: Detail
-          type: string
     CarRentalResponse:
       title: CarRentalResponse
       required:
@@ -57,35 +50,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Car'
-    CarRentalRequest:
-      title: FlightQueryRequest
-      required:
-      - originCountryCode
-      - locale
-      - destinationCityName
-      - originalInput
-      - originalInputInEnglish
+    HTTPValidationError:
+      title: HTTPValidationError
       type: object
       properties:
-        originCountryCode:
-          title: originCountryCode
+        detail:
+          title: Detail
           type: string
-          description: Which country the user comes from. If the user doesn't specify which country they are from in the question, please ask them.
-        locale:
-          title: locale
-          type: string
-        destinationCityName:
-          title: destinationCityName
-          type: string
-          description: The format of the field should be yyyy-MM-dd
-        originalInput:
-          title: originalInput
-          type: string
-          description: The user's original input
-        originalInputInEnglish:
-          title: originalInputInEnglish
-          type: string
-          description: The user's original input, translate to english.
     Car:
       title: Car
       type: object
@@ -124,3 +95,32 @@ components:
         airportCode:
           title: airportCode
           type: string
+    CarRentalRequest:
+      title: FlightQueryRequest
+      required:
+      - originCountryCode
+      - locale
+      - destinationCityName
+      - originalInput
+      - originalInputInEnglish
+      type: object
+      properties:
+        originCountryCode:
+          title: originCountryCode
+          type: string
+          description: Which country the user comes from. If the user doesn't specify which country they are from in the question, please ask them.
+        locale:
+          title: locale
+          type: string
+        destinationCityName:
+          title: destinationCityName
+          type: string
+          description: The format of the field should be yyyy-MM-dd
+        originalInput:
+          title: originalInput
+          type: string
+          description: The user's original input
+        originalInputInEnglish:
+          title: originalInputInEnglish
+          type: string
+          description: The user's original input, translate to english.

@@ -43,66 +43,6 @@ components:
         detail:
           title: Detail
           type: string
-    HotelQueryResponse:
-      title: HotelQueryResponse
-      required:
-      - hotelList
-      type: object
-      properties:
-        hotelList:
-          title: HotelList
-          type: array
-          items:
-            $ref: '#/components/schemas/Hotel'
-    Hotel:
-      title: Hotel
-      type: object
-      properties:
-        hotelName:
-          title: HotelName
-          type: string
-        hotelDescription:
-          title: HotelDescription
-          type: string
-        hotelCurrency:
-          title: HotelCurrency
-          type: string
-        hotelPrice:
-          title: HotelPrice
-          type: number
-        hotelLink:
-          title: HotelLink
-          type: string
-        hotelAddress:
-          title: hotelAddress
-          type: string
-        openYear:
-          title: openYear
-          type: string
-          description: The opening year of the hotel
-        renovationYear:
-          title: renovationYear
-          type: string
-          description: The renovation year of the hotel
-        score:
-          title: score
-          type: string
-        numberOfReviews:
-          title: numberOfReviews
-          type: integer
-          description: The number of reviews for the hotel.
-        numberOfFavorites:
-          title: numberOfFavorites
-          type: string
-          description: The number of times the hotel has been added to favorites
-        star:
-          title: star
-          type: integer
-        hotelFeatureTagList:
-          title: hotelFeatureTagList
-          type: array
-          items:
-            type: string
     HotelQueryRequest:
       title: HotelQueryRequest
       required:
@@ -387,3 +327,63 @@ components:
           title: originalInputInEnglish
           type: string
           description: The user's original input, translate to english.
+    HotelQueryResponse:
+      title: HotelQueryResponse
+      required:
+      - hotelList
+      type: object
+      properties:
+        hotelList:
+          title: HotelList
+          type: array
+          items:
+            $ref: '#/components/schemas/Hotel'
+    Hotel:
+      title: Hotel
+      type: object
+      properties:
+        hotelName:
+          title: HotelName
+          type: string
+        hotelDescription:
+          title: HotelDescription
+          type: string
+        hotelCurrency:
+          title: HotelCurrency
+          type: string
+        hotelPrice:
+          title: HotelPrice
+          type: number
+        hotelLink:
+          title: HotelLink
+          type: string
+        hotelAddress:
+          title: hotelAddress
+          type: string
+        openYear:
+          title: openYear
+          type: string
+          description: The opening year of the hotel
+        renovationYear:
+          title: renovationYear
+          type: string
+          description: The renovation year of the hotel
+        score:
+          title: score
+          type: string
+        numberOfReviews:
+          title: numberOfReviews
+          type: integer
+          description: The number of reviews for the hotel.
+        numberOfFavorites:
+          title: numberOfFavorites
+          type: string
+          description: The number of times the hotel has been added to favorites
+        star:
+          title: star
+          type: integer
+        hotelFeatureTagList:
+          title: hotelFeatureTagList
+          type: array
+          items:
+            type: string

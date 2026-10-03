@@ -36,6 +36,66 @@ paths:
       - SearchAttractionAndActivity
 components:
   schemas:
+    AttractionAndActivityQueryResponse:
+      title: AttractionAndActivityQueryResponse
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AttractionAndActivity'
+    AttractionAndActivity:
+      type: object
+      properties:
+        title:
+          type: string
+          description: Title or Name
+        summary:
+          type: string
+          description: Abstract or introduction
+        url:
+          type: string
+          description: Product URL
+        categories:
+          type: array
+          items:
+            type: string
+          description: Categories
+        attributes:
+          type: array
+          items:
+            type: string
+          description: Attributes
+        attractionsInside:
+          type: array
+          description: some inside attractions
+          items:
+            type: object
+            properties:
+              title:
+                type: string
+              summary:
+                type: string
+              url:
+                type: product link
+        openTime:
+          type: string
+          description: Opening time
+        distanceFromDowntown:
+          type: string
+          description: Distance from downtown
+        reviewQuantity:
+          type: integer
+          description: Review quantity
+        reviewRating:
+          type: number
+          description: Average review rating
+        startingPrice:
+          type: number
+          description: Starting price
+        currency:
+          type: string
+          description: Currency code
     HTTPValidationError:
       title: HTTPValidationError
       type: object
@@ -114,63 +174,3 @@ components:
           title: Original Input (English)
           type: string
           description: English translation of user's original input
-    AttractionAndActivityQueryResponse:
-      title: AttractionAndActivityQueryResponse
-      type: object
-      properties:
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/AttractionAndActivity'
-    AttractionAndActivity:
-      type: object
-      properties:
-        title:
-          type: string
-          description: Title or Name
-        summary:
-          type: string
-          description: Abstract or introduction
-        url:
-          type: string
-          description: Product URL
-        categories:
-          type: array
-          items:
-            type: string
-          description: Categories
-        attributes:
-          type: array
-          items:
-            type: string
-          description: Attributes
-        attractionsInside:
-          type: array
-          description: some inside attractions
-          items:
-            type: object
-            properties:
-              title:
-                type: string
-              summary:
-                type: string
-              url:
-                type: product link
-        openTime:
-          type: string
-          description: Opening time
-        distanceFromDowntown:
-          type: string
-          description: Distance from downtown
-        reviewQuantity:
-          type: integer
-          description: Review quantity
-        reviewRating:
-          type: number
-          description: Average review rating
-        startingPrice:
-          type: number
-          description: Starting price
-        currency:
-          type: string
-          description: Currency code

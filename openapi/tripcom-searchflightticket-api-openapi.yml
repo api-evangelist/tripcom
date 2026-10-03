@@ -36,13 +36,10 @@ paths:
       - SearchFlightTicket
 components:
   schemas:
-    FlightQueryRequest:
-      title: FlightQueryRequest
+    FlightQueryResponse:
+      title: FlightQueryResponse
       required:
-      - destinationCityCode
-      - locale
-      - originalInput
-      - originalInputInEnglish
+      - bookFlightLink
       type: object
       properties:
         originCityCode:
@@ -51,31 +48,26 @@ components:
         destinationCityCode:
           title: destinationCityCode
           type: string
-        departureDate:
-          title: departureDate
-          type: string
-          description: The format of the field should be yyyy-MM-dd
-        returnDate:
-          title: returnDate
-          type: string
-          description: The format of the field should be yyyy-MM-dd
-        locale:
-          title: locale
-          type: string
         oneWayOrRoundTrip:
           title: oneWayOrRoundTrip
           type: string
           enum:
           - OW
           - RT
-        originalInput:
-          title: originalInput
+        departureDate:
+          title: departureDate
           type: string
-          description: The user's original input
-        originalInputInEnglish:
-          title: originalInputInEnglish
+        returnDate:
+          title: returnDate
           type: string
-          description: The user's original input, translate to english.
+        bookFlightLink:
+          title: bookFlightLink
+          type: string
+        recommendedListOfOtherFlights:
+          title: recommendedListOfOtherFlights
+          type: array
+          items:
+            $ref: '#/components/schemas/Flight'
     HTTPValidationError:
       title: HTTPValidationError
       type: object
@@ -151,10 +143,13 @@ components:
         returnFlightDuration:
           title: returnFlightDuration
           type: string
-    FlightQueryResponse:
-      title: FlightQueryResponse
+    FlightQueryRequest:
+      title: FlightQueryRequest
       required:
-      - bookFlightLink
+      - destinationCityCode
+      - locale
+      - originalInput
+      - originalInputInEnglish
       type: object
       properties:
         originCityCode:
@@ -163,23 +158,28 @@ components:
         destinationCityCode:
           title: destinationCityCode
           type: string
+        departureDate:
+          title: departureDate
+          type: string
+          description: The format of the field should be yyyy-MM-dd
+        returnDate:
+          title: returnDate
+          type: string
+          description: The format of the field should be yyyy-MM-dd
+        locale:
+          title: locale
+          type: string
         oneWayOrRoundTrip:
           title: oneWayOrRoundTrip
           type: string
           enum:
           - OW
           - RT
-        departureDate:
-          title: departureDate
+        originalInput:
+          title: originalInput
           type: string
-        returnDate:
-          title: returnDate
+          description: The user's original input
+        originalInputInEnglish:
+          title: originalInputInEnglish
           type: string
-        bookFlightLink:
-          title: bookFlightLink
-          type: string
-        recommendedListOfOtherFlights:
-          title: recommendedListOfOtherFlights
-          type: array
-          items:
-            $ref: '#/components/schemas/Flight'
+          description: The user's original input, translate to english.
