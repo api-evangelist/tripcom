@@ -44,6 +44,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/AttractionAndActivity'
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: string
     AttractionAndActivity:
       type: object
       properties:
@@ -96,13 +103,6 @@ components:
         currency:
           type: string
           description: Currency code
-    HTTPValidationError:
-      title: HTTPValidationError
-      type: object
-      properties:
-        detail:
-          title: Detail
-          type: string
     AttractionAndActivityQueryRequest:
       title: AttractionAndActivityQueryRequest
       required:

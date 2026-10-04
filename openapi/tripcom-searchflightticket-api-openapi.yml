@@ -36,45 +36,6 @@ paths:
       - SearchFlightTicket
 components:
   schemas:
-    FlightQueryResponse:
-      title: FlightQueryResponse
-      required:
-      - bookFlightLink
-      type: object
-      properties:
-        originCityCode:
-          title: originCityCode
-          type: string
-        destinationCityCode:
-          title: destinationCityCode
-          type: string
-        oneWayOrRoundTrip:
-          title: oneWayOrRoundTrip
-          type: string
-          enum:
-          - OW
-          - RT
-        departureDate:
-          title: departureDate
-          type: string
-        returnDate:
-          title: returnDate
-          type: string
-        bookFlightLink:
-          title: bookFlightLink
-          type: string
-        recommendedListOfOtherFlights:
-          title: recommendedListOfOtherFlights
-          type: array
-          items:
-            $ref: '#/components/schemas/Flight'
-    HTTPValidationError:
-      title: HTTPValidationError
-      type: object
-      properties:
-        detail:
-          title: Detail
-          type: string
     Flight:
       title: Flight
       type: object
@@ -143,6 +104,45 @@ components:
         returnFlightDuration:
           title: returnFlightDuration
           type: string
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: string
+    FlightQueryResponse:
+      title: FlightQueryResponse
+      required:
+      - bookFlightLink
+      type: object
+      properties:
+        originCityCode:
+          title: originCityCode
+          type: string
+        destinationCityCode:
+          title: destinationCityCode
+          type: string
+        oneWayOrRoundTrip:
+          title: oneWayOrRoundTrip
+          type: string
+          enum:
+          - OW
+          - RT
+        departureDate:
+          title: departureDate
+          type: string
+        returnDate:
+          title: returnDate
+          type: string
+        bookFlightLink:
+          title: bookFlightLink
+          type: string
+        recommendedListOfOtherFlights:
+          title: recommendedListOfOtherFlights
+          type: array
+          items:
+            $ref: '#/components/schemas/Flight'
     FlightQueryRequest:
       title: FlightQueryRequest
       required:
