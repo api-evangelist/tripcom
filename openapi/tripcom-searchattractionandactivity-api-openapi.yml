@@ -36,21 +36,6 @@ paths:
       - SearchAttractionAndActivity
 components:
   schemas:
-    AttractionAndActivityQueryResponse:
-      title: AttractionAndActivityQueryResponse
-      type: object
-      properties:
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/AttractionAndActivity'
-    HTTPValidationError:
-      title: HTTPValidationError
-      type: object
-      properties:
-        detail:
-          title: Detail
-          type: string
     AttractionAndActivity:
       type: object
       properties:
@@ -103,6 +88,21 @@ components:
         currency:
           type: string
           description: Currency code
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: string
+    AttractionAndActivityQueryResponse:
+      title: AttractionAndActivityQueryResponse
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AttractionAndActivity'
     AttractionAndActivityQueryRequest:
       title: AttractionAndActivityQueryRequest
       required:

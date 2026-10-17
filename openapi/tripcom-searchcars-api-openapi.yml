@@ -43,6 +43,20 @@ components:
         detail:
           title: Detail
           type: string
+    CarRentalResponse:
+      title: CarRentalResponse
+      required:
+      - carList
+      type: object
+      properties:
+        carRentalLink:
+          title: carRentalLink
+          type: string
+        carList:
+          title: carList
+          type: array
+          items:
+            $ref: '#/components/schemas/Car'
     CarRentalRequest:
       title: FlightQueryRequest
       required:
@@ -110,17 +124,3 @@ components:
         airportCode:
           title: airportCode
           type: string
-    CarRentalResponse:
-      title: CarRentalResponse
-      required:
-      - carList
-      type: object
-      properties:
-        carRentalLink:
-          title: carRentalLink
-          type: string
-        carList:
-          title: carList
-          type: array
-          items:
-            $ref: '#/components/schemas/Car'

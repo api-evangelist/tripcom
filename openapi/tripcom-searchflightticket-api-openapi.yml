@@ -36,6 +36,13 @@ paths:
       - SearchFlightTicket
 components:
   schemas:
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: string
     Flight:
       title: Flight
       type: object
@@ -103,13 +110,6 @@ components:
           type: integer
         returnFlightDuration:
           title: returnFlightDuration
-          type: string
-    HTTPValidationError:
-      title: HTTPValidationError
-      type: object
-      properties:
-        detail:
-          title: Detail
           type: string
     FlightQueryResponse:
       title: FlightQueryResponse
