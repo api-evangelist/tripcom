@@ -8,6 +8,13 @@ checked:
 - https://www.indexventures.com/companies/
 - https://www.sequoiacap.com/our-companies/
 - https://www.sequoiacap.com/sitemap.xml
+- https://certify.octo.travel/api/certification/public
+- https://certify.octo.travel/verify
+- https://docs.google.com/spreadsheets/d/1UIgUYAPO3SUsdoGmg5xIGHIBHWHOx7XfQCOzOTML6ms
+- https://docs.octo.travel/
+- https://docs.octo.travel/additional-resources/known-implementations
+- https://octo.travel/api/members
+- https://octo.travel/members
 source: https://integrations-api.siteminder.com/public/partners/all?lang=en
 edges:
 - partner_name: SiteMinder
@@ -51,3 +58,65 @@ edges:
     status: Acquired by Ctrip
   detected_by: sweep-vc-portfolios.py
   first_seen: '2026-10-21'
+- partner_name: OCTO Known Implementations (docs.octo.travel)
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://docs.octo.travel/additional-resources/known-implementations
+  category: OCTO API implementation (live, self-reported)
+  contract_reference:
+    register: OCTO Known Implementations (docs.octo.travel)
+    standard: OCTO (Open Connectivity for Tours, Activities & Attractions) API specification
+    spec_file: null
+    spec_url: https://app.swaggerhub.com/apis-docs/OCTO-API/OCTO-API/1.0
+    standard_repo: octo
+    role: octo-implementer-reseller
+    registrations:
+    - registered_name: Trip.com
+      register_status: live
+      register_id: reseller:Trip.com
+      matched_domain: trip.com
+      matched_by: domain
+      implementation_side: reseller
+      capabilities:
+      - OCTO Core
+      - pricing
+      octo_membership: Technology Member
+    detected_by: sweep-octo-tours-activities.py
+    detected: '2026-10-23'
+    signal_note: 'participation only: a LIVE row on OCTO''s volunteer-maintained Known Implementations sheet (self-reported,
+      not certified)'
+  detected_by: sweep-octo-tours-activities.py
+  first_seen: '2026-10-23'
+- partner_name: OCTO member directory (octo.travel)
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://octo.travel/members
+  category: OCTO standards body membership (tours, activities & attractions connectivity)
+  contract_reference:
+    register: OCTO member directory (octo.travel)
+    standard: OCTO (Open Connectivity for Tours, Activities & Attractions) API specification
+    spec_file: null
+    spec_url: https://app.swaggerhub.com/apis-docs/OCTO-API/OCTO-API/1.0
+    standard_repo: octo
+    role: technology-member
+    registrations:
+    - registered_name: Trip.com Group
+      register_status: member
+      register_id: zWZ6zjbW
+      matched_domain: trip.com
+      matched_by: domain+local-verified
+      member_type: technology-member
+    detected_by: sweep-octo-tours-activities.py
+    detected: '2026-10-23'
+    signal_note: 'participation only: OCTO standards-body membership; membership certifies nothing'
+  detected_by: sweep-octo-tours-activities.py
+  first_seen: '2026-10-23'
+  partner_tier: Technology Member - Over USD $5M
