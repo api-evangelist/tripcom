@@ -64,6 +64,117 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Trip.com is a company surfaced as a portfolio company of battery-ventures and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Trip.com is a leading global online travel agency and part of Trip.com Group, offering one-stop travel booking for flights, hotels, trains, car rentals, airport transfers, attraction tickets, tours, and vacation packages across 39 countries and regions in 24 languages. Trip.com publishes a public AI travel-assistant plugin API (an OpenAI-plugin-style OpenAPI at www.trip.com/ai-resource) that lets assistants search flights, hotels, car hire, and attractions/activities and return deep booking links, alongside a published llms.txt describing its site structure for AI agents.
 
-Backed by: battery-ventures
+**Areas:** Company · Travel · Hotels · Flights · Car Rental · Attractions · Trains · Booking · Itinerary · AI Plugin
+
+## Trip.com on APIs.io
+
+Everything profiled for Trip.com is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/tripcom/](https://apis.io/providers/tripcom/)** — or go straight to one of the APIs or properties below.
+
+### APIs (4)
+
+- [Trip.com SearchAttractionAndActivity API](https://apis.io/apis/tripcom/tripcom-searchattractionandactivity-api/) — The SearchAttractionAndActivity API from Trip.com — 1 operation(s) for searchattractionandactivity.
+- [Trip.com SearchCars API](https://apis.io/apis/tripcom/tripcom-searchcars-api/) — The SearchCars API from Trip.com — 1 operation(s) for searchcars.
+- [Trip.com SearchFlightTicket API](https://apis.io/apis/tripcom/tripcom-searchflightticket-api/) — The SearchFlightTicket API from Trip.com — 1 operation(s) for searchflightticket.
+- [Trip.com SearchHotel API](https://apis.io/apis/tripcom/tripcom-searchhotel-api/) — The SearchHotel API from Trip.com — 1 operation(s) for searchhotel.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [tripcom](https://apis.io/servers/tripcom/tripcom/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Tripcom Agentic Access](https://apis.io/agentic-access/tripcom/tripcom-agentic-access/)
+
+#### Collections (4)
+
+Postman and Open Collection request collections.
+
+- [Trip.com Plugin- Personal Travel Assistant. SearchAttractionAndActivity API](https://apis.io/collections/tripcom/open-tripcom-searchattractionandactivity-api/)
+- [Trip.com Plugin- Personal Travel Assistant. SearchAttractionAndActivity SearchCars API](https://apis.io/collections/tripcom/open-tripcom-searchcars-api/)
+- [Trip.com Plugin- Personal Travel Assistant. SearchAttractionAndActivity SearchFlightTicket API](https://apis.io/collections/tripcom/open-tripcom-searchflightticket-api/)
+- [Trip.com Plugin- Personal Travel Assistant. SearchAttractionAndActivity SearchHotel API](https://apis.io/collections/tripcom/open-tripcom-searchhotel-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Tripcom Plugin Overlay](https://apis.io/overlays/tripcom/tripcom-plugin-overlay/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Tripcom Domain Security](https://apis.io/security/tripcom/tripcom-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.trip.com/)
+- [Support](https://www.trip.com/ask/questions/trip.com-customer-service.html)
+- [Blog](https://www.trip.com/blog/)
+- [Terms of service](https://pages.trip.com/service-guideline/terms-en-xx.html)
+- [Privacy policy](https://pages.trip.com/service-guideline/privacy-policy-en-xx.html)
+
+## API Evangelist rating
+
+**Kin Score 23.8** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 43.5 |
+| Contract governance | 4.5 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 18.5 |
+| Access clarity | 10.5 |
+
+**Agent readiness 19.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | yes |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 14.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/tripcom/](https://apis.io/providers/tripcom/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Trip.com: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/tripcom/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
